@@ -1,7 +1,7 @@
 {
-  "name": "ui-library",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@sarthakkpatill/ui-library",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
   "files": [
     "dist"
@@ -11,14 +11,18 @@
   "exports": {
     ".": {
       "import": "./dist/ui-library.js",
-      "require": "./dist/ui-library-umd.cjs"
+      "require": "./dist/ui-library.umd.cjs"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "prepare": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
